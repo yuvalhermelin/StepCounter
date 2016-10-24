@@ -22,9 +22,10 @@ public class PeakCounter {
 		threshold /= gyro3D.length - 1;
 		threshold = Math.sqrt(threshold);
 
+		threshold = threshold - (threshold - .03);
 		System.out.println(threshold);
-
 		int peaks = 0;
+		
 
 		for (int i = 1; i < gyro3D.length - 1; i++)
 			if (gyro3D[i] > gyro3D[i - 1] && gyro3D[i] > gyro3D[i + 1])
